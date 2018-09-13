@@ -21,20 +21,23 @@ getMovies().then((movies) => {
 });
 
 
+function renderMovies() {
+    getMovies().then((movies) => {
+        $("#listOfMovies").empty();
+        movies.forEach(({title, rating, id}) => {
+            var movieDetails = "<tr>";
+            movieDetails += "<td>" + title + "</td>";
+            movieDetails += "<td>" + rating + "</td>";
+            movieDetails += "<td>" + "<button type='button' class='btn btn-outline-success'>" + "Edit" + "</button>" + " " +
+                "<button type='button' class='btn btn-outline-warning'>" + "Delete" + "</button>" + "</td";
+            movieDetails += "</tr>";
+            $("#listOfMovies").append(movieDetails)
+        });
+    });
+}
 
 // lists all the movies in the collection
-getMovies().then((movies) => {
-
-    movies.forEach(({title, rating, id}) => {
-        var movieDetails = "<tr>";
-        movieDetails += "<td>" + title + "</td>";
-        movieDetails += "<td>" + rating + "</td>";
-        movieDetails += "<td>" + "<button type='button' class='btn btn-outline-success'>" + "Edit" + "</button>" + " " +
-            "<button type='button' class='btn btn-outline-warning'>" + "Delete" + "</button>" +"</td";
-        movieDetails += "</tr>";
-        $("#listOfMovies").append(movieDetails)
-    });
-});
+renderMovies();
 
 
 // adding a movie after "add my movie button" is clicked
@@ -45,7 +48,8 @@ $("#addMovie").click(function () {
     };
     console.log(data);
     $.post('/api/movies', data, function (data) {
-        console.log(data)
+        console.log(data);
+        renderMovies();
     });
 
 });
