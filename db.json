@@ -1,23 +1,23 @@
 {
   "movies": [
     {
-      "title": "star łors",
-      "rating": "5",
+      "title": "star łors1",
+      "rating": "3",
       "id": 2
     },
     {
-      "title": "jkjk",
-      "rating": "3",
+      "title": "jkjk3",
+      "rating": "4",
       "id": 4
     },
     {
-      "title": "\"Pianist\"",
-      "rating": "5",
+      "title": "Pianist",
+      "rating": "3",
       "id": 6
     },
     {
-      "title": "\"Schindler's List\"",
-      "rating": "5",
+      "title": "Schindler's List",
+      "rating": "4",
       "id": 8
     },
     {
@@ -49,6 +49,11 @@
       "title": "The Good, the Bad and the Ugly",
       "rating": "4",
       "id": 15
+    },
+    {
+      "title": "star wars",
+      "rating": "4",
+      "id": 16
     }
   ]
 }

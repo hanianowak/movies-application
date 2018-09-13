@@ -55,17 +55,17 @@ $("#addMovie").click(function () {
 
 
 // delete movies from the collection
-$(document).ready(function() {
+$(document).ready(function () {
 
     $(document).on("click", ".deleteMovie", function () {
-        
+
         var clicked = $(this).closest('tr');
         var id = clicked.data('id');
 
         console.log(clicked);
         $.ajax(`/api/movies/${id}`, {
             method: 'DELETE',
-            success: function(data) {
+            success: function (data) {
                 console.log(data)
             }
         });
@@ -73,11 +73,11 @@ $(document).ready(function() {
     });
 
 
-    // activate edit button
+    // activate edit button - getting data from selected movie and putting into edit form
     $(document).on("click", ".editMovie", function () {
         var tr = $(this).closest('tr');
         var id = tr.data('id');
-        var title =  tr.children().first().text();
+        var title = tr.children().first().text();
         var rating = $(tr.children()[1]).text();
 
         console.log(tr);
@@ -85,11 +85,32 @@ $(document).ready(function() {
         console.log(rating);
 
         $('#title-edit').val(title);
-        // $('')
+        $("input[name='inlineRadioOptionsE'][value='" + rating + "']").prop('checked', true);
+        $('#ID-edit').val(id);
+    });
+
+
+    //edit - saving changes after clicking the button
+    $(document).on("click", "#saveChanges", function () {
+        var data = {
+            title: $('#title-edit').val(),
+            rating: $('.form-check-inputE:checked').val(),
+        };
+
+        var id = $('#ID-edit').val();
         
-    })
+        $.ajax(`/api/movies/${id}`, {
+            method: 'PATCH',
+            data: data,
+            success: function (data) {
+                console.log(data)
+            }
+        });
+        renderMovies();
+    });
 
 });
+
 
 
 
