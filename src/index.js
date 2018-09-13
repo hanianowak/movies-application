@@ -26,10 +26,12 @@ getMovies().then((movies) => {
 getMovies().then((movies) => {
 
     movies.forEach(({title, rating, id}) => {
-        var movieDetails = "<div>";
-        movieDetails += "<h3>" + title + "</h3>";
-        movieDetails += "<h6>" + rating + "</h6>";
-        movieDetails += "</div>";
+        var movieDetails = "<tr>";
+        movieDetails += "<td>" + title + "</td>";
+        movieDetails += "<td>" + rating + "</td>";
+        movieDetails += "<td>" + "<button type='button' class='btn btn-outline-success'>" + "Edit" + "</button>" + " " +
+            "<button type='button' class='btn btn-outline-warning'>" + "Delete" + "</button>" +"</td";
+        movieDetails += "</tr>";
         $("#listOfMovies").append(movieDetails)
     });
 });
