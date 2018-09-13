@@ -28,7 +28,7 @@ function renderMovies() {
             var movieDetails = "<tr data-id='" + id + "'>";
             movieDetails += "<td>" + title + "</td>";
             movieDetails += "<td>" + rating + "</td>";
-            movieDetails += "<td>" + "<button type='button' class='btn btn-outline-success'>" + "Edit" + "</button>" + " " +
+            movieDetails += "<td>" + "<button type='button' class='btn btn-outline-success editMovie'>" + "Edit" + "</button>" + " " +
                 "<button type='button' class='btn btn-outline-warning deleteMovie'>" + "Delete" + "</button>" + "</td";
             movieDetails += "</tr>";
             $("#listOfMovies").append(movieDetails)
@@ -54,13 +54,11 @@ $("#addMovie").click(function () {
 });
 
 
-
 // delete movies from the collection
 $(document).ready(function() {
 
     $(document).on("click", ".deleteMovie", function () {
         
-        console.log("jdjklsdjsk");
         var clicked = $(this).closest('tr');
         var id = clicked.data('id');
 
@@ -74,6 +72,22 @@ $(document).ready(function() {
         renderMovies();
     });
 
+
+    // activate edit button
+    $(document).on("click", ".editMovie", function () {
+        var tr = $(this).closest('tr');
+        var id = tr.data('id');
+        var title =  tr.children().first().text();
+        var rating = $(tr.children()[1]).text();
+
+        console.log(tr);
+        console.log(id);
+        console.log(rating);
+
+        $('#title-edit').val(title);
+        // $('')
+        
+    })
 
 });
 
