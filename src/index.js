@@ -22,6 +22,19 @@ getMovies().then((movies) => {
 
 
 
+// lists all the movies in the collection
+getMovies().then((movies) => {
+
+    movies.forEach(({title, rating, id}) => {
+        var movieDetails = "<div>";
+        movieDetails += "<h3>" + title + "</h3>";
+        movieDetails += "<h6>" + rating + "</h6>";
+        movieDetails += "</div>";
+        $("#listOfMovies").append(movieDetails)
+    });
+});
+
+
 // adding a movie after "add my movie button" is clicked
 $("#addMovie").click(function () {
     var data = {
