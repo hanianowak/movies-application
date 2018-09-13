@@ -25,11 +25,11 @@ function renderMovies() {
     getMovies().then((movies) => {
         $("#listOfMovies").empty();
         movies.forEach(({title, rating, id}) => {
-            var movieDetails = "<tr>";
+            var movieDetails = "<tr data-id='" + id + "'>";
             movieDetails += "<td>" + title + "</td>";
             movieDetails += "<td>" + rating + "</td>";
             movieDetails += "<td>" + "<button type='button' class='btn btn-outline-success'>" + "Edit" + "</button>" + " " +
-                "<button type='button' class='btn btn-outline-warning'>" + "Delete" + "</button>" + "</td";
+                "<button type='button' class='btn btn-outline-warning deleteMovie'>" + "Delete" + "</button>" + "</td";
             movieDetails += "</tr>";
             $("#listOfMovies").append(movieDetails)
         });
@@ -51,6 +51,32 @@ $("#addMovie").click(function () {
         console.log(data);
         renderMovies();
     });
+});
+
+
+
+// delete movies from the collection
+$(document).ready(function() {
+
+    $(document).on("click", ".deleteMovie", function () {
+        
+        console.log("jdjklsdjsk");
+        var clicked = $(this).closest('tr');
+        var id = clicked.data('id');
+
+        console.log(clicked);
+        $.ajax(`/api/movies/${id}`, {
+            method: 'DELETE',
+            success: function(data) {
+                console.log(data)
+            }
+        });
+        renderMovies();
+    });
+
 
 });
+
+
+
 
