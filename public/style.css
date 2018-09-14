@@ -1,18 +1,24 @@
-html, body {
+body {
     height: 100%;
+    background-image: url('old.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.cont {
+    background-color: #ececec;
+    width: 100%;
+    border-radius: 10px;
 }
 
 /*.container {*/
-    /*position: relative;*/
-    /*top: 50%;*/
-    /*transform: translateY(-100%);*/
-    /*text-align: center;*/
+/*position: relative;*/
+/*top: 50%;*/
+/*transform: translateY(-100%);*/
+/*text-align: center;*/
 /*}*/
 
 #movie-add-form {
     width: 50%;
 }
-
-/*.invisible {*/
-    /*display: none;*/
-/*}*/

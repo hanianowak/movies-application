@@ -57,7 +57,7 @@ $("#addMovie").click(function () {
 
 // delete movies from the collection
 $(document).ready(function () {
-    
+
     $(".invisi").hide();
     $("#cancelEdit").click(function () {
         $(".invisi").hide();
@@ -71,7 +71,6 @@ $(document).ready(function () {
     $("#cancelAdd").click(function () {
         $("#movie-add-form").hide();
     });
-
 
 
     $(document).on("click", ".deleteMovie", function () {
@@ -118,7 +117,7 @@ $(document).ready(function () {
         };
 
         var id = $('#ID-edit').val();
-        
+
         $.ajax(`/api/movies/${id}`, {
             method: 'PATCH',
             data: data,

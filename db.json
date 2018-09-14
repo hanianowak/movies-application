@@ -1,11 +1,6 @@
 {
   "movies": [
     {
-      "title": "The Pianist",
-      "rating": "5",
-      "id": 6
-    },
-    {
       "title": "Schindler's List",
       "rating": "4",
       "id": 8
@@ -51,8 +46,8 @@
       "id": 19
     },
     {
-      "title": "cos6",
-      "rating": "3",
+      "title": "The Pianist",
+      "rating": "5",
       "id": 20
     }
   ]
