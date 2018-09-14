@@ -1,18 +1,8 @@
 {
   "movies": [
     {
-      "title": "star łors1",
-      "rating": "3",
-      "id": 2
-    },
-    {
-      "title": "jkjk3",
-      "rating": "4",
-      "id": 4
-    },
-    {
-      "title": "Pianist",
-      "rating": "3",
+      "title": "The Pianist",
+      "rating": "5",
       "id": 6
     },
     {
@@ -21,28 +11,18 @@
       "id": 8
     },
     {
-      "title": "cos",
-      "rating": "3",
+      "title": "cos3",
+      "rating": "4",
       "id": 9
     },
     {
-      "title": "something",
-      "rating": "4",
-      "id": 10
-    },
-    {
-      "title": "cos1",
-      "rating": "2",
+      "title": "Dzień Świra",
+      "rating": "5",
       "id": 11
     },
     {
-      "title": "cos1",
-      "rating": "2",
-      "id": 12
-    },
-    {
-      "title": "cos3",
-      "rating": "1",
+      "title": "cos2",
+      "rating": "3",
       "id": 13
     },
     {
@@ -54,6 +34,16 @@
       "title": "star wars",
       "rating": "4",
       "id": 16
+    },
+    {
+      "title": "Death in Venice",
+      "rating": "2",
+      "id": 17
+    },
+    {
+      "title": "Eyes Wide Shut",
+      "rating": "5",
+      "id": 18
     }
   ]
 }

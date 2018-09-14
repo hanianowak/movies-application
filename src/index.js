@@ -56,6 +56,11 @@ $("#addMovie").click(function () {
 
 // delete movies from the collection
 $(document).ready(function () {
+    
+    $(".invisi").hide();
+    $("#cancelEdit").click(function () {
+        $(".invisi").hide();
+    });
 
     $(document).on("click", ".deleteMovie", function () {
 
@@ -75,6 +80,8 @@ $(document).ready(function () {
 
     // activate edit button - getting data from selected movie and putting into edit form
     $(document).on("click", ".editMovie", function () {
+        $(".invisi").show();
+
         var tr = $(this).closest('tr');
         var id = tr.data('id');
         var title = tr.children().first().text();
@@ -92,6 +99,7 @@ $(document).ready(function () {
 
     //edit - saving changes after clicking the button
     $(document).on("click", "#saveChanges", function () {
+        $(".invisi").hide();
         var data = {
             title: $('#title-edit').val(),
             rating: $('.form-check-inputE:checked').val(),
@@ -108,10 +116,4 @@ $(document).ready(function () {
         });
         renderMovies();
     });
-
 });
-
-
-
-
-
