@@ -42,6 +42,7 @@ renderMovies();
 
 // adding a movie after "add my movie button" is clicked
 $("#addMovie").click(function () {
+    $("#movie-add-form").hide();
     var data = {
         title: $('#title-input').val(),
         rating: $('.form-check-input:checked').val()
@@ -61,6 +62,17 @@ $(document).ready(function () {
     $("#cancelEdit").click(function () {
         $(".invisi").hide();
     });
+
+    $("#movie-add-form").hide();
+    $("#addMovieButton").click(function () {
+        $("#movie-add-form").show();
+    });
+
+    $("#cancelAdd").click(function () {
+        $("#movie-add-form").hide();
+    });
+
+
 
     $(document).on("click", ".deleteMovie", function () {
 
